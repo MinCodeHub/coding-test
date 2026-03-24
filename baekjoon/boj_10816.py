@@ -1,5 +1,6 @@
 import sys
 
+#dict 실습 
 input = sys.stdin.readline
 
 n = int(input())
