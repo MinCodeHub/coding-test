@@ -1,5 +1,18 @@
 from collections import deque
 
+#dfs방식 vs bfs방식 
+# bfs가 더 빠른 것을 알 수 있음.
+def dfs(cur):
+    visited[cur] = True
+    count = 1
+    #print(cur)
+
+    for next in net[cur]:
+        if not visited[next]:
+            count += dfs(next)
+    return count
+
+
 def bfs():
     q = deque()
     count = 0
@@ -28,7 +41,9 @@ for _ in range(m): #연결 관계 그래프
 
 visited = [0] * (n+1)
 
-bfs()
+
+result = dfs(1)
+print(result - 1)
 
 
 
